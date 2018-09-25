@@ -18,7 +18,7 @@ Back-end: Node
 ## Back-end installation:
 
 Download the directory "api-rest". You'll need a node server installed to run the ApiREST.
-Configure the ports in: app.js
+Configure the back-end and the fron-end ports in: app.js
 
 ```js
 const front_port = 3000; //The front-end port
@@ -35,7 +35,9 @@ node app.js
 
 ## Front-end installation:
 
-Download the directory "phone-catalog" and run in the root directory:
+Download the directory "phone-catalog".
+
+Configure the back-end ports in: app.js
 
 
 src/modules/phones/actionCreators.js: line 3
@@ -45,12 +47,17 @@ src/modules/phones/actionCreators.js: line 3
 const API_URL = 'http://localhost:8000';
 
 ```
-run: 
+
+Run in the root directory
+
+Run: 
 
 ```sh
 npm install
 npm start
 ```
+
+
 Loader Image by:
 
 https://github.com/SamHerbert/SVG-Loaders
