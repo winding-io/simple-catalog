@@ -1,28 +1,209 @@
-.App {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* css reseteado */
+
+html{
+  height: auto;
+  min-height: 100%;
+}
+body {
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  background: linear-gradient(300deg, #d2551e96 0%, #1bebe77d 100%);
+}
+h1{
   text-align: center;
+  font-weight: 300;
+  opacity: 0.8;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 35px;
+  margin: 35px 0;
+  text-shadow: 2px 2px 2px rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.container {
+  margin: 10px;
+}
+.phone-list-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.card-wrapper{
+  width: 99%;
+}
+.card{
+  cursor: pointer;
+  margin: 10px;
+  background: linear-gradient(300deg, #c0dada 0%, #f7f9ff 100%);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.15);
+}
+.phone-detail-wrapper{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.8);
+  display: flex;
+}
+.phone-detail-wrapper .card{
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 600px;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.wrapper-thumbnail{
+  height: 200px;
+  background-color: #fff;
+  padding-top: 1em;
+  position: relative;
+}
+.thumbnail{
+  height: 90%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 0.25s ease-out;
 }
 
-.App-title {
-  font-size: 1.5em;
+:not(.phone-detail-wrapper) .card:hover .thumbnail{
+  height: 94%;
+  transition: all 0.25s ease-out;
 }
-
-.App-intro {
-  font-size: large;
+:not(.phone-detail-wrapper) .card:hover .thumbnail{
+  transition: all 0.25s ease-out;
 }
+.title{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 15px;
+  text-shadow: 2px 2px 2px rgba(255,255,255,0.3); 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+:not(.phone-detail-wrapper) .card:hover .title{
+  font-weight: 500;
+}
+.description{
+  height: 2.5em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0 15px;
+  opacity: 0.85;
+  font-size: 18px;
+  line-height: 1.3;
+}
+.phone-detail-wrapper .description{
+  height: auto;
+  text-overflow: initial;
+  overflow: auto;
+  white-space: normal;
+}
+.phone-detail-wrapper .bt-close{
+  font-size: 35px;
+  font-weight: 100;
+  /*opacity: 0.6; */
+  color: #19b5b5;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 10;
+}
+.price{
+  font-weight: 100;
+  font-size: 38px;
+  text-align: right;
+  margin: 25px 15px 15px 15px;
+  transition: all 0.25s ease-out;
+  vertical-align: bottom;
+  line-height: 24px;
+  color: #2a5d92c4;
+  letter-spacing: -1px;
+}
+.fullwidth{
+  font-size: 24px;
+  text-align: center;
+  width:100%;
+}
+.fullwidth img{
+    display: block;
+    margin: auto;
+}
+.phone-detail-component{}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media (min-width: 520px) {
+  .phone-detail-wrapper{
+    padding: 10px;
+  }
+  .card-wrapper{
+    width: 50%;
+  }
+}
+@media (min-width: 720px) {
+  .card-wrapper{
+    width: 33.33%;
+  }
+}
+@media (min-width: 899px) {
+  .card-wrapper{
+    width: 25%;
+  }
+}
+@media (min-width: 1199px) {
+  .card-wrapper{
+    width: 20%;
+  }
 }
